@@ -16,6 +16,7 @@ int main() {
     long int populacao1;
     float area1;
     double pib1;
+    float densidade1, pib_per_capita1;
 
     // Variáveis para a CARTA 2
     int codigo2, pontosTuristicos2;
@@ -23,6 +24,7 @@ int main() {
     long int populacao2;
     float area2;
     double pib2;
+    float densidade2, pib_per_capita2;
     
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
@@ -43,11 +45,14 @@ int main() {
     printf("Digite a area em km2: \n");
     scanf("%f", &area1);
 
-    printf("Digite o PIB (em bilhoes de USD): \n");
+    printf("Digite o PIB (em bilhoes de reais): \n");
     scanf("%lf", &pib1);
 
     printf("Digite o numero de pontos turisticos: \n");
     scanf("%d", &pontosTuristicos1);
+
+    densidade1 = (float)populacao1 / area1;
+    pib_per_capita1 = (pib1 * 1000000000.0) / populacao1;
 
     // --- CADASTRO DA CARTA 2 ---
     printf("\n--- CADASTRO DA CARTA 2 ---\n");
@@ -64,11 +69,14 @@ int main() {
     printf("Digite a area em km2: \n");
     scanf("%f", &area2);
 
-    printf("Digite o PIB (em bilhoes de USD): \n");
+    printf("Digite o PIB (em bilhoes de reais): \n");
     scanf("%lf", &pib2);
 
     printf("Digite o numero de pontos turisticos: \n");
     scanf("%d", &pontosTuristicos2);
+
+    densidade2 = (float)populacao2 / area2;
+    pib_per_capita2 = (pib2 * 1000000000.0) / populacao2;
     
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
@@ -83,6 +91,8 @@ int main() {
     printf("Area: %.2f km2\n", area1);
     printf("PIB: U$ %.2lf bilhoes\n", pib1);
     printf("Pontos Turisticos: %d\n", pontosTuristicos1);
+    printf("Densidade Populacional: %.2f hab/km2\n", densidade1);
+    printf("PIB per Capita: %.2f reais\n", pib_per_capita1); // A unidade do desafio é reais
     printf("--------------------------\n");
 
     // Mostra os dados da Carta 2
@@ -92,6 +102,8 @@ int main() {
     printf("Area: %.2f km2\n", area2);
     printf("PIB: U$ %.2lf bilhoes\n", pib2);
     printf("Pontos Turisticos: %d\n", pontosTuristicos2);
+    printf("Densidade Populacional: %.2f hab/km2\n", densidade2);
+    printf("PIB per Capita: %.2f reais\n", pib_per_capita2); // A unidade do desafio é reais
     printf("--------------------------\n");
 
     return 0;
